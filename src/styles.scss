@@ -1,4 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+}
+
+:root{
+  /* Primary */
+  --plato-purple: #8B5CF6;
+  --plato-purple-dark: #4C1D95;
+  --plato-purple-light: #A78BFA;
+
+  /* Secondary */
+  --plato-orange: #F97316;
+  --plato-orange-dark: #EA580C;
+  --plato-orange-light: #FFEDD5;
+
+  /* Neutrals */
+  --plato-background: #FAFAFA;
+  --plato-surface: #FFFFFF;
+  --plato-text: #18181B;
+  --plato-text-secondary: #71717A;
+  --plato-text-muted: #A1A1AA;
+  --plato-border: #E4E4E7;
+
+  /* Status */
+  --plato-success: #22C55E;
+  --plato-warning: #F59E0B;
+  --plato-error: #EF4444;
+  --plato-info: #3B82F6;
 }
