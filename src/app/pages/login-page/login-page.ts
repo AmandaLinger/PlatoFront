@@ -4,7 +4,7 @@ import {FooterComponent} from '../../components/footer-component/footer-componen
 @Component({
   selector: 'app-login-page',
   imports: [FooterComponent],
-  templateUrl: '../../../../public/assets/login-page.html',
+  templateUrl: './login-page.html',
   styleUrl: './login-page.scss',
 })
 export class LoginPage {
