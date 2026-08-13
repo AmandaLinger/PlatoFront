@@ -54,7 +54,6 @@ main{
 
 @media screen and (min-width: 700px) {
   .cabecalho{
-    text-align: center;
     padding: 150px 0 0 0;
     h1{
       font-size: var(--ts-64);
@@ -72,7 +71,7 @@ main{
       height: 300px;
     }
     .subtitle{
-      transform: translateY(60px);
+      transform: translateY(40px);
       h3{
         font-size: var(--ts-32);
       }
@@ -93,10 +92,13 @@ main{
 
 @media screen and (min-width: 1700px){
   .container{
+    height: 550px;
     img{
+      transform: translateY(-130px);
       height: 350px;
     }
     .subtitle{
+      transform: translateY(-10px);
       p{
         padding: 0 700px;
       }
