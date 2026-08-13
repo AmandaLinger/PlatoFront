@@ -1,5 +1,6 @@
 button{
   background-color: var(--plato-orange);
+  color: var(--plato-surface);
   border: none;
   border-radius: 16px;
   padding: 16px 24px;
@@ -9,12 +10,6 @@ button{
 button:hover{
   scale: 1.1;
   cursor:pointer
-}
-
-a{
-  text-decoration: none;
-
-  color: var(--plato-surface);
 }
 
 @media screen and (min-width: 700px){
