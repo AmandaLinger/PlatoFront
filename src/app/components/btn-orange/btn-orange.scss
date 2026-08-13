@@ -1,0 +1,13 @@
+button{
+  background-color: var(--plato-orange);
+  color: var(--plato-surface);
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: var(--ts-24);
+  font-weight: 700;
+}
+button:hover{
+  scale: 1.1;
+  cursor:pointer
+}

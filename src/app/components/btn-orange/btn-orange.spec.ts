@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtnRoxo } from './btn-roxo';
+import { BtnOrange } from './btn-orange';
 
-describe('BtnRoxo', () => {
-  let component: BtnRoxo;
-  let fixture: ComponentFixture<BtnRoxo>;
+describe('BtnOrange', () => {
+  let component: BtnOrange;
+  let fixture: ComponentFixture<BtnOrange>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BtnRoxo]
+      imports: [BtnOrange]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BtnRoxo);
+    fixture = TestBed.createComponent(BtnOrange);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

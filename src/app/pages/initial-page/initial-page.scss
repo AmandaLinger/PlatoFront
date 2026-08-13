@@ -1,5 +1,6 @@
 main{
-  background-color: var(--plato-background);
+  height: 100vh;
+  background-color: #f1eef4;
 }
 
 .cabecalho{
@@ -8,7 +9,7 @@ main{
   h1{
     font-family: 'Ubuntu', sans-serif;
     font-size: var(--ts-48);
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
   p{
     font-size: var(--ts-16);
@@ -28,7 +29,7 @@ main{
     transform: translateY(-100px);
   }
   .subtitle{
-    transform: translateY(50px);
+    transform: translateY(60px);
     color: var(--plato-surface);
     text-align: center;
 
@@ -48,5 +49,58 @@ main{
 .container-btn{
   display: flex;
   justify-content: center;
-  transform: translateY(-35px);
+  transform: translateY(-40px);
+}
+
+@media screen and (min-width: 700px) {
+  .cabecalho{
+    text-align: center;
+    padding: 150px 0 0 0;
+    h1{
+      font-size: var(--ts-64);
+    }
+    p{
+      font-size: var(--ts-20);
+    }
+  }
+
+
+  .container{
+    height: 550px;
+    margin: 150px 32px 16px 32px;
+    img{
+      height: 300px;
+    }
+    .subtitle{
+      transform: translateY(60px);
+      h3{
+        font-size: var(--ts-32);
+      }
+
+      p{
+        font-size: var(--ts-24);
+        padding: 0 100px;
+      }
+
+    }
+  }
+
+  .container-btn{
+    transform: translateY(-40px);
+  }
+
+}
+
+@media screen and (min-width: 1700px){
+  .container{
+    img{
+      height: 350px;
+    }
+    .subtitle{
+      p{
+        padding: 0 700px;
+      }
+
+    }
+  }
 }
