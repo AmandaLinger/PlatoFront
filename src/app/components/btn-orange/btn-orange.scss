@@ -26,6 +26,7 @@ button:hover{
     scale:1.2;
   }
   button:hover{
+    transition: ease-in-out 0.2s ;
     scale: 1.3;
   }
 }

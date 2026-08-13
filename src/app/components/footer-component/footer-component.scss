@@ -4,9 +4,12 @@
   left: 0;
 
   color: white;
-  background-color: gray;
-  padding: 16px 8px;
   width: 100%;
 
   text-align: center;
+
+  font-size: var(--ts-16);
+  p{
+    margin-bottom: 16px;
+  }
 }

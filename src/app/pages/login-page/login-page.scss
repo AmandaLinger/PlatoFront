@@ -69,3 +69,72 @@ main{
   display: flex;
   justify-content: center;
 }
+
+
+@media screen and (min-width: 700px){
+  .container{
+    padding:40px 32px 56px 32px;
+  }
+
+  .img-container {
+    img{
+      height: 350px;
+    }
+  }
+
+
+  .inputs{
+    .mb-8px{
+      margin-bottom: 16px;
+    }
+
+    .mb-4px{
+      margin-bottom: 8px;
+    }
+
+    label{
+      font-size: var(--ts-16);
+    }
+
+    input{
+      padding: 8px;
+      font-size: var(--ts-16);
+    }
+  }
+}
+
+@media screen and (min-width: 1700px){
+  .logo-escrita{
+    font-size: var(--ts-56);
+  }
+
+  .container{
+    padding:40px 32px 56px 32px;
+  }
+
+  .img-container {
+    img{
+      height: 400px;
+    }
+  }
+
+
+  .inputs{
+    .mb-8px{
+      margin-bottom: 24px;
+    }
+
+    .mb-4px{
+      margin-bottom: 8px;
+    }
+
+    label{
+      font-size: var(--ts-20);
+    }
+
+    input{
+      padding: 16px;
+      font-size: var(--ts-20);
+    }
+  }
+}
