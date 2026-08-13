@@ -11,6 +11,8 @@
   --plato-purple: #8B5CF6;
   --plato-purple-dark: #4C1D95;
   --plato-purple-light: #A78BFA;
+  --purple-gradient: linear-gradient(45deg, #8B5CF6, #4C1D95);
+  --purple-orange-gradient: linear-gradient(45deg, #8B5CF6, #F97316);
 
   /* Secondary */
   --plato-orange: #F97316;
@@ -30,4 +32,10 @@
   --plato-warning: #F59E0B;
   --plato-error: #EF4444;
   --plato-info: #3B82F6;
+
+  /* Tamanhos de font */
+  --ts-16: 16px;
+  --ts-24: 24px;
+  --ts-48: 48px;
+
 }

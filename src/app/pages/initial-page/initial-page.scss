@@ -1,0 +1,52 @@
+main{
+  background-color: var(--plato-background);
+}
+
+.cabecalho{
+  text-align: center;
+  padding: 100px 0 0 0;
+  h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: var(--ts-48);
+    margin-bottom: 12px;
+  }
+  p{
+    font-size: var(--ts-16);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+
+.container{
+  background-image: var(--purple-gradient);
+  height: 500px;
+  margin: 150px 24px 16px 24px;
+  text-align: center;
+  border-radius: 16px;
+  img{
+    height: 230px;
+    transform: translateY(-100px);
+  }
+  .subtitle{
+    transform: translateY(50px);
+    color: var(--plato-surface);
+    text-align: center;
+
+    font-family: 'Inter', sans-serif;
+    h3{
+      font-size: var(--ts-24);
+    }
+
+    p{
+      font-size: var(--ts-16);
+      padding: 0 24px;
+    }
+
+  }
+}
+
+.container-btn{
+  display: flex;
+  justify-content: center;
+  transform: translateY(-35px);
+}
