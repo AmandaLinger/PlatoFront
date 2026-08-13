@@ -13,7 +13,6 @@ main{
   }
   p{
     font-size: var(--ts-16);
-    font-family: 'Inter', sans-serif;
   }
 }
 
@@ -32,8 +31,6 @@ main{
     transform: translateY(60px);
     color: var(--plato-surface);
     text-align: center;
-
-    font-family: 'Inter', sans-serif;
     h3{
       font-size: var(--ts-24);
     }

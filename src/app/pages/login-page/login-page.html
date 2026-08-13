@@ -1,20 +1,32 @@
 <main>
-  <div class="img-container">
-    <img src="/login.png" alt="ícone de login">
+
+  <div class="logo-escrita">
+    plato
   </div>
 
-  <div class="inputs">
-    <div>
-      <label for="usuario">Usuario</label>
-      <input name="usuario"  />
+  <div class="container">
+    <div class="img-container">
+      <img src="/logo_plato.svg" alt="ícone de login">
     </div>
 
-    <div>
-      <label for="senha">Senha</label>
-      <input name="senha" type="password" />
+    <div class="inputs">
+      <div class="flex-column mb-8px">
+        <label for="usuario" class="mb-4px">Usuario</label>
+        <input name="usuario" placeholder="usuario" />
+      </div>
+
+      <div class="flex-column mb-8px">
+        <label for="senha" class="mb-4px">Senha</label>
+        <input name="senha" type="password" placeholder="********" />
+      </div>
+    </div>
+
+    <div class="container-btn">
+      <app-btn-orange>
+        login
+      </app-btn-orange>
     </div>
   </div>
 
-
-  <app-footer-component />
+  <app-footer-component/>
 </main>

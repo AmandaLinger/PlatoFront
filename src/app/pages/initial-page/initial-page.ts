@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import {BtnInitial} from '../../components/btn-inital/btn-initial';
+import {Component} from '@angular/core';
 import {BtnOrange} from '../../components/btn-orange/btn-orange';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-initial-page',
   imports: [
-    BtnInitial,
-    BtnOrange
+    BtnOrange,
+    RouterLink
   ],
   templateUrl: './initial-page.html',
   styleUrl: './initial-page.scss',
