@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ItemHome} from '../../components/item-home/item-home';
 import {RouterLink} from '@angular/router';
 import {FooterComponent} from '../../components/footer-component/footer-component';
-import {Configuracao} from '../../components/configuracao/configuracao';
+import {BtnConfig} from '../../components/btn-config/btn-config';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +10,7 @@ import {Configuracao} from '../../components/configuracao/configuracao';
     ItemHome,
     RouterLink,
     FooterComponent,
-    Configuracao
+    BtnConfig
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
