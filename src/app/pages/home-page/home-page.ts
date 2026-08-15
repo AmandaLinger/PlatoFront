@@ -3,6 +3,7 @@ import {ItemHome} from '../../components/item-home/item-home';
 import {RouterLink} from '@angular/router';
 import {FooterComponent} from '../../components/footer-component/footer-component';
 import {BtnConfig} from '../../components/btn-config/btn-config';
+import {TelaConfig} from '../../components/tela-config/tela-config';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +11,8 @@ import {BtnConfig} from '../../components/btn-config/btn-config';
     ItemHome,
     RouterLink,
     FooterComponent,
-    BtnConfig
+    BtnConfig,
+    TelaConfig
   ],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
