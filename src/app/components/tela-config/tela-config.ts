@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {ItemHome} from '../item-home/item-home';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-tela-config',
   imports: [
-    ItemHome
+    ItemHome,
+    RouterLink
   ],
   templateUrl: './tela-config.html',
   styleUrl: './tela-config.scss',
