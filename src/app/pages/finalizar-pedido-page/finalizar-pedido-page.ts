@@ -32,6 +32,42 @@ export class FinalizarPedidoPage implements OnDestroy {
       valorTotal: 61,
     },
     {
+      id: 'nf-007',
+      mesa: 'Mesa 07',
+      produtos: [
+        { nome: 'Pizza calabresa', quantidade: 1 },
+        { nome: 'Refrigerante', quantidade: 2 },
+      ],
+      valorTotal: 61,
+    },
+    {
+      id: 'nf-007',
+      mesa: 'Mesa 07',
+      produtos: [
+        { nome: 'Pizza calabresa', quantidade: 1 },
+        { nome: 'Refrigerante', quantidade: 2 },
+      ],
+      valorTotal: 61,
+    },
+    {
+      id: 'nf-011',
+      mesa: 'Mesa 11',
+      produtos: [
+        { nome: 'Pizza margherita', quantidade: 2 },
+        { nome: 'Refrigerante', quantidade: 1 },
+      ],
+      valorTotal: 128,
+    },
+    {
+      id: 'nf-011',
+      mesa: 'Mesa 11',
+      produtos: [
+        { nome: 'Pizza margherita', quantidade: 2 },
+        { nome: 'Refrigerante', quantidade: 1 },
+      ],
+      valorTotal: 128,
+    },
+    {
       id: 'nf-011',
       mesa: 'Mesa 11',
       produtos: [

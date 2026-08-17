@@ -19,8 +19,7 @@
             </div>
             <div class="order-action">
               <strong>{{ notaFiscal.valorTotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong>
-              <app-btn-orange (click)="openFinalizeModal(notaFiscal)"
-                              fontSize="16px" >Finalizar</app-btn-orange>
+              <app-btn-orange (click)="openFinalizeModal(notaFiscal)">Finalizar</app-btn-orange>
             </div>
           </article>
         }
