@@ -18,14 +18,7 @@ export class ConsultarMesasPage implements OnDestroy {
   private readonly router = inject(Router);
   private requestVersion = 0;
 
-  readonly mesas: readonly Mesa[] = [
-    { numero: 1, status: 'Livre' },
-    { numero: 2, status: 'Ocupada', pedidoId: 'pedido-02' },
-    { numero: 3, status: 'Aguardando conta' },
-    { numero: 4, status: 'Livre' },
-    { numero: 5, status: 'Ocupada', pedidoId: 'pedido-05' },
-    { numero: 6, status: 'Livre' },
-  ];
+  readonly mesas: readonly Mesa[] = [];
 
   mesaSelecionada: Mesa | null = null;
   consumo: ConsumoMesa | null = null;

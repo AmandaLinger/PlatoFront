@@ -13,78 +13,7 @@ import { ItemPedido, Pedido, Produto, SelecaoProduto } from '../../models/pedido
   styleUrl: './fazer-pedido-page.scss',
 })
 export class FazerPedidoPage {
-  readonly produtos: readonly Produto[] = [
-    {
-      id: 'pizza-margherita',
-      nome: 'Pizza margherita',
-      descricao: 'Molho, muçarela e manjericão.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 42,
-    },
-    {
-      id: 'pizza-calabresa',
-      nome: 'Pizza calabresa',
-      descricao: 'Calabresa, cebola e muçarela.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 46,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-    {
-      id: 'refrigerante',
-      nome: 'Refrigerante',
-      descricao: 'Lata 350 ml.',
-      imagemUrl: '/pizza.png',
-      precoUnitario: 7,
-    },
-  ];
+  readonly produtos: readonly Produto[] = [];
 
   itens: ItemPedido[] = [];
   produtoSelecionado: Produto | null = null;

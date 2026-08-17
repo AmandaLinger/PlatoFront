@@ -12,71 +12,7 @@ import { FinalizacaoNota, NotaFiscalPendente } from '../../models/pedido.models'
   styleUrl: './finalizar-pedido-page.scss',
 })
 export class FinalizarPedidoPage implements OnDestroy {
-  notasFiscais: NotaFiscalPendente[] = [
-    {
-      id: 'nf-002',
-      mesa: 'Mesa 02',
-      produtos: [
-        { nome: 'Pizza margherita', quantidade: 1 },
-        { nome: 'Refrigerante', quantidade: 2 },
-      ],
-      valorTotal: 95,
-    },
-    {
-      id: 'nf-007',
-      mesa: 'Mesa 07',
-      produtos: [
-        { nome: 'Pizza calabresa', quantidade: 1 },
-        { nome: 'Refrigerante', quantidade: 2 },
-      ],
-      valorTotal: 61,
-    },
-    {
-      id: 'nf-007',
-      mesa: 'Mesa 07',
-      produtos: [
-        { nome: 'Pizza calabresa', quantidade: 1 },
-        { nome: 'Refrigerante', quantidade: 2 },
-      ],
-      valorTotal: 61,
-    },
-    {
-      id: 'nf-007',
-      mesa: 'Mesa 07',
-      produtos: [
-        { nome: 'Pizza calabresa', quantidade: 1 },
-        { nome: 'Refrigerante', quantidade: 2 },
-      ],
-      valorTotal: 61,
-    },
-    {
-      id: 'nf-011',
-      mesa: 'Mesa 11',
-      produtos: [
-        { nome: 'Pizza margherita', quantidade: 2 },
-        { nome: 'Refrigerante', quantidade: 1 },
-      ],
-      valorTotal: 128,
-    },
-    {
-      id: 'nf-011',
-      mesa: 'Mesa 11',
-      produtos: [
-        { nome: 'Pizza margherita', quantidade: 2 },
-        { nome: 'Refrigerante', quantidade: 1 },
-      ],
-      valorTotal: 128,
-    },
-    {
-      id: 'nf-011',
-      mesa: 'Mesa 11',
-      produtos: [
-        { nome: 'Pizza margherita', quantidade: 2 },
-        { nome: 'Refrigerante', quantidade: 1 },
-      ],
-      valorTotal: 128,
-    },
-  ];
+  notasFiscais: NotaFiscalPendente[] = [];
 
   notaSelecionada: NotaFiscalPendente | null = null;
   notaFinalizada: NotaFiscalPendente | null = null;
