@@ -1,27 +1,39 @@
 <main>
   <section class="page-container" aria-labelledby="page-title">
-    <app-btn-back/>
+    <app-btn-back />
     <header>
       <p class="eyebrow">Caixa</p>
       <h1 id="page-title">Finalizar pedido</h1>
       <p>Selecione um pedido aberto para conferir e concluir o pagamento.</p>
     </header>
 
-    <section class="order-list" aria-label="Pedidos abertos">
-      @for (pedido of pedidos; track pedido.mesa) {
-        <article class="order-card">
-          <div>
-            <h2>{{ pedido.mesa }}</h2>
-            <p>{{ pedido.itens }} itens no pedido</p>
-          </div>
-          <div class="order-action">
-            <strong>{{ pedido.total }}</strong>
-            <div class="style-container">
-              <app-btn-orange >Finalizar</app-btn-orange>
+    @if (notasFiscais.length === 0) {
+      <p class="empty-state">Não há pedidos aguardando finalização.</p>
+    } @else {
+      <section class="order-list" aria-label="Pedidos abertos">
+        @for (notaFiscal of notasFiscais; track notaFiscal.id) {
+          <article class="order-card">
+            <div>
+              <h2>{{ notaFiscal.mesa }}</h2>
+              <p>{{ notaFiscal.produtos.length }} produtos no pedido</p>
             </div>
-          </div>
-        </article>
-      }
-    </section>
+            <div class="order-action">
+              <strong>{{ notaFiscal.valorTotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong>
+              <app-btn-orange (click)="openFinalizeModal(notaFiscal)" class="size-font">Finalizar</app-btn-orange>
+            </div>
+          </article>
+        }
+      </section>
+    }
   </section>
+
+  <div class="container-position">
+    @if (notaFinalizada; as nota) {
+      <p class="success-message" role="status">A nota da {{ nota.mesa }} foi finalizada com sucesso.</p>
+    }
+  </div>
 </main>
+
+@if (notaSelecionada) {
+  <app-modal-finalizar-nota [notaFiscal]="notaSelecionada" (closed)="closeFinalizeModal()" (finalized)="finalizeNote($event)" />
+}

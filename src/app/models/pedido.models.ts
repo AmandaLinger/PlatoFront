@@ -22,3 +22,28 @@ export interface Pedido {
   readonly itens: readonly ItemPedido[];
   readonly valorTotal: number;
 }
+
+export interface ProdutoNotaFiscal {
+  readonly nome: string;
+  readonly quantidade: number;
+}
+
+export interface NotaFiscalPendente {
+  readonly id: string;
+  readonly mesa: string;
+  readonly produtos: readonly ProdutoNotaFiscal[];
+  readonly valorTotal: number;
+}
+
+export interface OperadorCaixa {
+  readonly id: string;
+  readonly nome: string;
+}
+
+export type FormaPagamento = 'dinheiro' | 'credito' | 'debito' | 'pix';
+
+export interface FinalizacaoNota {
+  readonly notaFiscalId: string;
+  readonly operadorId: string;
+  readonly formaPagamento: FormaPagamento;
+}
