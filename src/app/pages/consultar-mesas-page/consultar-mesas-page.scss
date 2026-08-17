@@ -12,6 +12,17 @@
   background-color: var(--plato-surface);
   padding: 20px 16px;
 
+  &.clickable {
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--plato-purple);
+      box-shadow: 0 4px 12px rgb(76 29 149 / 16%);
+      outline: none;
+    }
+  }
+
   span,
   p {
     color: var(--plato-text-secondary);

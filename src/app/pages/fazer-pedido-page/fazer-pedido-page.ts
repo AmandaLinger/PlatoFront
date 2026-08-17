@@ -49,6 +49,41 @@ export class FazerPedidoPage {
       imagemUrl: '/pizza.png',
       precoUnitario: 7,
     },
+    {
+      id: 'refrigerante',
+      nome: 'Refrigerante',
+      descricao: 'Lata 350 ml.',
+      imagemUrl: '/pizza.png',
+      precoUnitario: 7,
+    },
+    {
+      id: 'refrigerante',
+      nome: 'Refrigerante',
+      descricao: 'Lata 350 ml.',
+      imagemUrl: '/pizza.png',
+      precoUnitario: 7,
+    },
+    {
+      id: 'refrigerante',
+      nome: 'Refrigerante',
+      descricao: 'Lata 350 ml.',
+      imagemUrl: '/pizza.png',
+      precoUnitario: 7,
+    },
+    {
+      id: 'refrigerante',
+      nome: 'Refrigerante',
+      descricao: 'Lata 350 ml.',
+      imagemUrl: '/pizza.png',
+      precoUnitario: 7,
+    },
+    {
+      id: 'refrigerante',
+      nome: 'Refrigerante',
+      descricao: 'Lata 350 ml.',
+      imagemUrl: '/pizza.png',
+      precoUnitario: 7,
+    },
   ];
 
   itens: ItemPedido[] = [];

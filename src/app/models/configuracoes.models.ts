@@ -15,3 +15,16 @@ export interface Fornecedor {
 }
 
 export type FornecedorCadastro = Omit<Fornecedor, 'id'>;
+
+export interface NotaFornecedor {
+  readonly id: string;
+  readonly fornecedorId: string;
+  readonly fornecedorNome: string;
+  readonly dataEmissao: string;
+  readonly numeroNota: string;
+  readonly valorTotal: number | null;
+  readonly chaveAcesso: string;
+  readonly observacoes: string;
+}
+
+export type NotaFornecedorCadastro = Omit<NotaFornecedor, 'id' | 'fornecedorNome'>;

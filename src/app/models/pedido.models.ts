@@ -26,6 +26,7 @@ export interface ItemPedido extends SelecaoProduto {
 export interface Pedido {
   readonly mesa: string;
   readonly garcom: string;
+  readonly garcomId?: string;
   readonly itens: readonly ItemPedido[];
   readonly valorTotal: number;
 }
@@ -53,4 +54,29 @@ export interface FinalizacaoNota {
   readonly notaFiscalId: string;
   readonly operadorId: string;
   readonly formaPagamento: FormaPagamento;
+}
+
+export type StatusMesa = 'Livre' | 'Ocupada' | 'Aguardando conta';
+
+export interface Mesa {
+  readonly numero: number;
+  readonly status: StatusMesa;
+  readonly pedidoId?: string;
+}
+
+export interface ItemConsumoMesa {
+  readonly id: string;
+  readonly produtoNome: string;
+  readonly quantidade: number;
+  readonly observacoes: string;
+  readonly precoUnitario: number;
+  readonly subtotal: number;
+}
+
+export interface ConsumoMesa {
+  readonly mesaNumero: number;
+  readonly pedidoId: string;
+  readonly abertoEm: string;
+  readonly itens: readonly ItemConsumoMesa[];
+  readonly valorTotal: number;
 }

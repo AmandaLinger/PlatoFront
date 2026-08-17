@@ -13,6 +13,7 @@ import { FuncionariosPage } from './pages/funcionarios-page/funcionarios-page';
 import { FornecedoresPage } from './pages/fornecedores-page/fornecedores-page';
 import { MesasPage } from './pages/mesas-page/mesas-page';
 import { CozinhaPage } from './pages/cozinha-page/cozinha-page';
+import { NotaFornecedorPage } from './pages/nota-fornecedor-page/nota-fornecedor-page';
 
 export const routes: Routes = [
   { path: '', component: InitialPage },
@@ -29,5 +30,6 @@ export const routes: Routes = [
   { path: 'configuracoes/fornecedores', component: FornecedoresPage },
   { path: 'configuracoes/mesas', component: MesasPage },
   { path: 'configuracoes/cozinha', component: CozinhaPage },
+  { path: 'nota-fornecedor', component: NotaFornecedorPage },
   { path: '**', redirectTo: '' }
 ];

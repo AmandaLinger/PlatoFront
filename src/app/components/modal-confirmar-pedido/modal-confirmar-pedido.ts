@@ -1,38 +1,79 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { finalize } from 'rxjs';
+import { FuncionariosService } from '../../services/funcionarios.service';
+import { Funcionario } from '../../models/configuracoes.models';
 import { ItemPedido, Pedido } from '../../models/pedido.models';
 
 @Component({
   selector: 'app-modal-confirmar-pedido',
-  imports: [CurrencyPipe, FormsModule],
+  imports: [CurrencyPipe, ReactiveFormsModule],
   templateUrl: './modal-confirmar-pedido.html',
   styleUrl: './modal-confirmar-pedido.scss',
 })
-export class ModalConfirmarPedido implements OnChanges {
+export class ModalConfirmarPedido implements OnInit, OnChanges {
   @Input() itens: readonly ItemPedido[] = [];
   @Input() valorTotal = 0;
   @Output() readonly closed = new EventEmitter<void>();
   @Output() readonly confirmed = new EventEmitter<Pedido>();
 
-  mesa = '';
-  garcom = '';
+  private readonly formBuilder = inject(FormBuilder);
+  private readonly funcionariosService = inject(FuncionariosService);
+
+  readonly form = this.formBuilder.nonNullable.group({
+    mesa: ['', Validators.required],
+    garcomId: ['', Validators.required],
+  });
+  funcionarios: readonly Funcionario[] = [];
+  isLoadingFuncionarios = true;
+  funcionariosError = '';
+
+  ngOnInit(): void {
+    this.loadFuncionarios();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['itens']) {
-      this.mesa = '';
-      this.garcom = '';
+      this.form.reset({ mesa: '', garcomId: '' });
     }
   }
 
-  confirmOrder(): void {
-    const mesa = this.mesa.trim();
-    const garcom = this.garcom.trim();
+  private loadFuncionarios(): void {
+    this.isLoadingFuncionarios = true;
+    this.funcionariosError = '';
 
-    if (!mesa || !garcom || this.itens.length === 0) {
+    this.funcionariosService
+      .listarAtivos()
+      .pipe(finalize(() => (this.isLoadingFuncionarios = false)))
+      .subscribe({
+        next: (funcionarios) => (this.funcionarios = funcionarios),
+        error: () => {
+          this.funcionarios = [];
+          this.funcionariosError = 'Não foi possível carregar os funcionários.';
+        },
+      });
+  }
+
+  confirmOrder(): void {
+    if (this.form.invalid || this.itens.length === 0) {
+      this.form.markAllAsTouched();
       return;
     }
 
-    this.confirmed.emit({ mesa, garcom, itens: this.itens, valorTotal: this.valorTotal });
+    const { mesa, garcomId } = this.form.getRawValue();
+    const funcionario = this.funcionarios.find((item) => item.id === garcomId);
+
+    if (!funcionario) {
+      return;
+    }
+
+    this.confirmed.emit({
+      mesa: mesa.trim(),
+      garcom: funcionario.nome,
+      garcomId: funcionario.id,
+      itens: this.itens,
+      valorTotal: this.valorTotal,
+    });
   }
 }

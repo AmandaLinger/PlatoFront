@@ -1,6 +1,6 @@
 <main>
   <section class="page-container" aria-labelledby="page-title">
-    <app-btn-back/>
+    <app-btn-back />
     <header>
       <p class="eyebrow">Salão</p>
       <h1 id="page-title">Consultar mesas</h1>
@@ -9,7 +9,15 @@
 
     <section class="tables-grid" aria-label="Status das mesas">
       @for (mesa of mesas; track mesa.numero) {
-        <article class="table-card" [class]="mesa.status.toLowerCase().replaceAll(' ', '-')">
+        <article
+          class="table-card"
+          [class]="mesa.status.toLowerCase().replaceAll(' ', '-')"
+          [class.clickable]="mesa.status === 'Ocupada'"
+          [attr.role]="mesa.status === 'Ocupada' ? 'button' : null"
+          [attr.tabindex]="mesa.status === 'Ocupada' ? 0 : null"
+          (click)="selectMesa(mesa)"
+          (keydown.enter)="selectMesa(mesa)"
+        >
           <span>Mesa</span>
           <strong>{{ mesa.numero | number: '2.0-0' }}</strong>
           <p>{{ mesa.status }}</p>
@@ -18,3 +26,14 @@
     </section>
   </section>
 </main>
+
+@if (isModalOpen) {
+  <app-modal-detalhes-mesa
+    [mesaNumero]="mesaSelecionada?.numero ?? null"
+    [consumo]="consumo"
+    [isLoading]="isLoading"
+    [errorMessage]="errorMessage"
+    (closed)="closeModal()"
+    (addItems)="addMoreItems()"
+  />
+}

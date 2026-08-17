@@ -1,7 +1,14 @@
 @use '../page-layout';
 
 .content-grid { display: grid; gap: 16px; }
-.products { display: grid; gap: 12px; }
+
+.products {
+  display: grid;
+  gap: 12px;
+
+  height: fit-content;
+}
+
 .product-card, .order-summary {
   border: 1px solid var(--plato-border);
   border-radius: 12px;
@@ -9,9 +16,26 @@
   padding: 16px;
 }
 
-.product-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; color: inherit; text-align: left; cursor: pointer;
-  &:hover, &:focus-visible { border-color: var(--plato-purple); box-shadow: 0 4px 12px rgb(76 29 149 / 16%); }
-  img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; }
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover, &:focus-visible {
+    border-color: var(--plato-purple);
+    box-shadow: 0 4px 12px rgb(76 29 149 / 16%);
+  }
+  img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
   h2 { margin: 0; font-size: var(--ts-20); }
   p { margin: 4px 0 0; color: var(--plato-text-secondary); }
   strong { color: var(--plato-purple-dark); white-space: nowrap; }
@@ -49,17 +73,17 @@
 
 @media (max-width: 699.98px) {
   .page-container {
-    padding-bottom: calc(42vh + 32px);
+    padding-bottom: 300px;
   }
 
   .order-summary {
     position: fixed;
     z-index: 10;
     right: 16px;
-    bottom: max(16px, env(safe-area-inset-bottom));
+    bottom: max(4px, env(safe-area-inset-bottom));
     left: 16px;
     box-sizing: border-box;
-    max-height: 42vh;
+    max-height: 300px;
     overflow-y: auto;
     box-shadow: 0 -4px 20px rgb(24 24 27 / 18%);
   }
@@ -69,5 +93,10 @@
 @media (min-width: 700px) {
   .content-grid {
     grid-template-columns: 2fr 1fr;
+  }
+  .products, .order-summary{
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

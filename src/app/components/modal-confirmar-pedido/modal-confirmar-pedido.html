@@ -12,15 +12,34 @@
 
     <div class="total"><span>Total</span><strong>{{ valorTotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong></div>
 
-    <form (ngSubmit)="confirmOrder()">
+    <form [formGroup]="form" (ngSubmit)="confirmOrder()">
       <label for="mesa">Mesa</label>
-      <input id="mesa" name="mesa" [(ngModel)]="mesa" required placeholder="Ex.: 12">
+      <input id="mesa" formControlName="mesa" placeholder="Ex.: 12">
+      @if (form.controls.mesa.touched && form.controls.mesa.invalid) {
+        <small class="field-error">Informe a mesa.</small>
+      }
       <label for="garcom">Garçom</label>
-      <input id="garcom" name="garcom" [(ngModel)]="garcom" required placeholder="Nome do garçom">
+      @if (isLoadingFuncionarios) {
+        <select id="garcom" formControlName="garcomId" [disabled]="true">
+          <option value="">Carregando funcionários...</option>
+        </select>
+      } @else {
+        <select id="garcom" formControlName="garcomId">
+          <option value="" disabled>Selecione um garçom</option>
+          @for (funcionario of funcionarios; track funcionario.id) {
+            <option [value]="funcionario.id">{{ funcionario.nome }}</option>
+          }
+        </select>
+      }
+      @if (funcionariosError) {
+        <small class="field-error">{{ funcionariosError }}</small>
+      } @else if (form.controls.garcomId.touched && form.controls.garcomId.invalid) {
+        <small class="field-error">Selecione um garçom.</small>
+      }
 
       <div class="actions">
         <button class="secondary-button" type="button" (click)="closed.emit()">Voltar</button>
-        <button class="primary-button" type="submit" [disabled]="!mesa.trim() || !garcom.trim() || itens.length === 0">Confirmar pedido</button>
+        <button class="primary-button" type="submit" [disabled]="form.invalid || isLoadingFuncionarios || funcionarios.length === 0 || itens.length === 0">Confirmar pedido</button>
       </div>
     </form>
   </section>

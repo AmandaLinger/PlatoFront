@@ -7,5 +7,6 @@
 }
 .total { display: flex; justify-content: space-between; border-top: 1px solid var(--plato-border); border-bottom: 1px solid var(--plato-border); padding: 14px 0; color: var(--plato-purple-dark); font-size: var(--ts-20); font-weight: 700; }
 form { display: grid; gap: 8px; margin-top: 20px; }
-input { border: 1px solid var(--plato-border); border-radius: 8px; padding: 12px; font: inherit; }
+input, select { border: 1px solid var(--plato-border); border-radius: 8px; background-color: var(--plato-surface); padding: 12px; color: var(--plato-text); font: inherit; }
+.field-error { color: var(--plato-error); }
 .primary-button:disabled { cursor: not-allowed; opacity: 0.55; }
