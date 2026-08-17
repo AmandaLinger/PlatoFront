@@ -6,6 +6,13 @@ export interface Produto {
   readonly precoUnitario: number;
 }
 
+export interface ProdutoPayload {
+  readonly nome: string;
+  readonly descricao: string;
+  readonly imagemUrl: string;
+  readonly precoUnitario: number;
+}
+
 export interface SelecaoProduto {
   readonly produto: Produto;
   readonly quantidade: number;
