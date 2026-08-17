@@ -1,0 +1,27 @@
+<div class="overlay" (click)="closed.emit()">
+  <section class="modal" role="dialog" aria-modal="true" aria-labelledby="confirm-order-title" (click)="$event.stopPropagation()">
+    <button class="close-button" type="button" aria-label="Fechar" (click)="closed.emit()">×</button>
+    <p class="eyebrow">Conferência</p>
+    <h2 id="confirm-order-title">Confirmar pedido</h2>
+
+    <ul class="items-list">
+      @for (item of itens; track $index) {
+        <li><span>{{ item.quantidade }}x {{ item.produto.nome }}</span><strong>{{ item.subtotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong></li>
+      }
+    </ul>
+
+    <div class="total"><span>Total</span><strong>{{ valorTotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong></div>
+
+    <form (ngSubmit)="confirmOrder()">
+      <label for="mesa">Mesa</label>
+      <input id="mesa" name="mesa" [(ngModel)]="mesa" required placeholder="Ex.: 12">
+      <label for="garcom">Garçom</label>
+      <input id="garcom" name="garcom" [(ngModel)]="garcom" required placeholder="Nome do garçom">
+
+      <div class="actions">
+        <button class="secondary-button" type="button" (click)="closed.emit()">Voltar</button>
+        <button class="primary-button" type="submit" [disabled]="!mesa.trim() || !garcom.trim() || itens.length === 0">Confirmar pedido</button>
+      </div>
+    </form>
+  </section>
+</div>

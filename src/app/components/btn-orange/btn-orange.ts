@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-btn-orange',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './btn-orange.scss',
 })
 export class BtnOrange {
+  @Input() disabled = false;
+  @Input() type: 'button' | 'submit' = 'button';
 
 }

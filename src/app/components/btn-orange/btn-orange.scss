@@ -12,6 +12,15 @@ button:hover{
   cursor:pointer
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button:disabled:hover {
+  scale: 1;
+}
+
 @media screen and (min-width: 700px){
   button{
     scale:1.1;
