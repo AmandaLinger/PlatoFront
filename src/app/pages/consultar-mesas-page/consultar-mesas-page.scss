@@ -1,0 +1,49 @@
+@use '../page-layout';
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.table-card {
+  border: 1px solid var(--plato-border);
+  border-radius: 12px;
+  background-color: var(--plato-surface);
+  padding: 20px 16px;
+
+  span,
+  p {
+    color: var(--plato-text-secondary);
+  }
+
+  strong {
+    display: block;
+    margin: 4px 0 12px;
+    color: var(--plato-purple-dark);
+    font-size: var(--ts-32);
+  }
+
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &.livre p {
+    color: var(--plato-success);
+  }
+
+  &.ocupada p {
+    color: var(--plato-error);
+  }
+
+  &.aguardando-conta p {
+    color: var(--plato-warning);
+  }
+}
+
+@media (min-width: 700px) {
+  .tables-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

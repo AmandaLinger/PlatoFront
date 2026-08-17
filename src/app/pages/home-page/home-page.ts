@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {ItemHome} from '../../components/item-home/item-home';
 import {BtnConfig} from '../../components/btn-config/btn-config';
 import {TelaConfig} from '../../components/tela-config/tela-config';
@@ -7,6 +8,7 @@ import {TelaConfig} from '../../components/tela-config/tela-config';
   selector: 'app-home-page',
   imports: [
     ItemHome,
+    RouterLink,
     BtnConfig,
     TelaConfig
   ],

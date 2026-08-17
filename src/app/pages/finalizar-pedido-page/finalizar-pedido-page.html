@@ -1,0 +1,27 @@
+<main>
+  <section class="page-container" aria-labelledby="page-title">
+    <app-btn-back/>
+    <header>
+      <p class="eyebrow">Caixa</p>
+      <h1 id="page-title">Finalizar pedido</h1>
+      <p>Selecione um pedido aberto para conferir e concluir o pagamento.</p>
+    </header>
+
+    <section class="order-list" aria-label="Pedidos abertos">
+      @for (pedido of pedidos; track pedido.mesa) {
+        <article class="order-card">
+          <div>
+            <h2>{{ pedido.mesa }}</h2>
+            <p>{{ pedido.itens }} itens no pedido</p>
+          </div>
+          <div class="order-action">
+            <strong>{{ pedido.total }}</strong>
+            <div class="style-container">
+              <app-btn-orange >Finalizar</app-btn-orange>
+            </div>
+          </div>
+        </article>
+      }
+    </section>
+  </section>
+</main>

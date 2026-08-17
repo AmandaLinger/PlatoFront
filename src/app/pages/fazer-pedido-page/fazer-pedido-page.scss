@@ -1,0 +1,70 @@
+@use '../page-layout';
+
+.content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+header {
+  p{
+    color: var(--plato-text-secondary);
+  }
+  h1{
+    color: var(--plato-purple);
+  }
+}
+
+.products {
+  display: grid;
+  gap: 12px;
+}
+
+.product-card,
+.order-summary {
+  border: 1px solid var(--plato-border);
+  border-radius: 12px;
+  background-color: var(--plato-surface);
+  padding: 16px;
+}
+
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  h2 {
+    font-size: var(--ts-20);
+  }
+
+  p {
+    margin-top: 4px;
+    color: var(--plato-text-secondary);
+  }
+
+  strong {
+    color: var(--plato-purple-dark);
+    white-space: nowrap;
+  }
+}
+  .order-summary {
+    h2 {
+      margin: 0;
+      font-size: var(--ts-20);
+    }
+
+    p {
+      margin: 8px 0 16px;
+      color: var(--plato-text-secondary);
+    }
+  }
+
+.container-style{
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  .content-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}

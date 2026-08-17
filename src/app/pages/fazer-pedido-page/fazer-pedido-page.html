@@ -1,0 +1,36 @@
+<main>
+  <section class="page-container" aria-labelledby="page-title">
+
+    <app-btn-back/>
+
+    <header>
+      <p class="eyebrow">Novo atendimento</p>
+      <h1 id="page-title">Fazer pedido</h1>
+      <p>Escolha os itens para iniciar um novo pedido.</p>
+    </header>
+
+    <div class="content-grid">
+      <section class="products" aria-label="Itens do cardápio">
+        @for (produto of produtos; track produto.nome) {
+          <article class="product-card">
+            <div>
+              <h2>{{ produto.nome }}</h2>
+              <p>{{ produto.descricao }}</p>
+            </div>
+            <strong>{{ produto.preco }}</strong>
+          </article>
+        }
+      </section>
+
+      <div class="container-resumo">
+        <aside class="order-summary">
+          <h2>Resumo do pedido</h2>
+          <p>Nenhum item adicionado.</p>
+          <div class="container-style">
+            <app-btn-orange>Adicionar itens</app-btn-orange>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>

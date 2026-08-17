@@ -1,0 +1,20 @@
+<main>
+  <section class="page-container" aria-labelledby="page-title">
+    <app-btn-back/>
+    <header>
+      <p class="eyebrow">Salão</p>
+      <h1 id="page-title">Consultar mesas</h1>
+      <p>Acompanhe rapidamente a situação das mesas do restaurante.</p>
+    </header>
+
+    <section class="tables-grid" aria-label="Status das mesas">
+      @for (mesa of mesas; track mesa.numero) {
+        <article class="table-card" [class]="mesa.status.toLowerCase().replaceAll(' ', '-')">
+          <span>Mesa</span>
+          <strong>{{ mesa.numero | number: '2.0-0' }}</strong>
+          <p>{{ mesa.status }}</p>
+        </article>
+      }
+    </section>
+  </section>
+</main>
