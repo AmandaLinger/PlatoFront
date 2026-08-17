@@ -46,3 +46,9 @@ main{
     font-size: var(--ts-20);
   }
 }
+
+.btn-back{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}

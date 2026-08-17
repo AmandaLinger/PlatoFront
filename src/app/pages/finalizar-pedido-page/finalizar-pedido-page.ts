@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { BtnBack } from '../../components/btn-back/btn-back';
 import { BtnOrange } from '../../components/btn-orange/btn-orange';
 import { ModalFinalizarNota } from '../../components/modal-finalizar-nota/modal-finalizar-nota';
@@ -11,7 +11,7 @@ import { FinalizacaoNota, NotaFiscalPendente } from '../../models/pedido.models'
   templateUrl: './finalizar-pedido-page.html',
   styleUrl: './finalizar-pedido-page.scss',
 })
-export class FinalizarPedidoPage {
+export class FinalizarPedidoPage implements OnDestroy {
   notasFiscais: NotaFiscalPendente[] = [
     {
       id: 'nf-002',
@@ -44,6 +44,12 @@ export class FinalizarPedidoPage {
 
   notaSelecionada: NotaFiscalPendente | null = null;
   notaFinalizada: NotaFiscalPendente | null = null;
+  showNotification = false;
+  private notificationTimer: ReturnType<typeof setTimeout> | undefined;
+
+  ngOnDestroy(): void {
+    this.clearNotificationTimer();
+  }
 
   openFinalizeModal(notaFiscal: NotaFiscalPendente): void {
     this.notaSelecionada = notaFiscal;
@@ -61,7 +67,20 @@ export class FinalizarPedidoPage {
     }
 
     this.notaFinalizada = notaFiscal;
+    this.showNotification = true;
     this.notasFiscais = this.notasFiscais.filter((nota) => nota.id !== finalizacao.notaFiscalId);
     this.closeFinalizeModal();
+    this.clearNotificationTimer();
+    this.notificationTimer = setTimeout(() => {
+      this.showNotification = false;
+      this.notificationTimer = undefined;
+    }, 2000);
+  }
+
+  private clearNotificationTimer(): void {
+    if (this.notificationTimer) {
+      clearTimeout(this.notificationTimer);
+      this.notificationTimer = undefined;
+    }
   }
 }

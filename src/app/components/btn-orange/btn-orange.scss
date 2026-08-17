@@ -1,10 +1,10 @@
 button{
   background-image: var(--orange-gradient);
   color: var(--plato-surface);
+  font-size: var(--btn-font-size, var(--ts-24));
   border: none;
   border-radius: 16px;
   padding: 16px 24px;
-  font-size: var(--ts-24);
   font-weight: 700;
 }
 button:hover{

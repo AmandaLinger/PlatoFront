@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class BtnOrange {
   @Input() disabled = false;
   @Input() type: 'button' | 'submit' = 'button';
-
+  @Input() fontSize: string = 'var(--ts-24)';
 }

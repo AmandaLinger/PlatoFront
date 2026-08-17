@@ -19,7 +19,8 @@
             </div>
             <div class="order-action">
               <strong>{{ notaFiscal.valorTotal | currency: 'BRL' : 'symbol' : '1.2-2' }}</strong>
-              <app-btn-orange (click)="openFinalizeModal(notaFiscal)" class="size-font">Finalizar</app-btn-orange>
+              <app-btn-orange (click)="openFinalizeModal(notaFiscal)"
+                              fontSize="16px" >Finalizar</app-btn-orange>
             </div>
           </article>
         }
@@ -27,11 +28,13 @@
     }
   </section>
 
-  <div class="container-position">
+  @if (showNotification) {
     @if (notaFinalizada; as nota) {
-      <p class="success-message" role="status">A nota da {{ nota.mesa }} foi finalizada com sucesso.</p>
+      <div class="container-position">
+        <p class="success-message" role="status">A nota da {{ nota.mesa }} foi finalizada com sucesso.</p>
+      </div>
     }
-  </div>
+  }
 </main>
 
 @if (notaSelecionada) {

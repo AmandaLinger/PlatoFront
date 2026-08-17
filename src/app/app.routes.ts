@@ -9,6 +9,10 @@ import { FazerPedidoPage } from './pages/fazer-pedido-page/fazer-pedido-page';
 import { FinalizarPedidoPage } from './pages/finalizar-pedido-page/finalizar-pedido-page';
 import { ConsultarMesasPage } from './pages/consultar-mesas-page/consultar-mesas-page';
 import { NotasDoDiaPage } from './pages/notas-do-dia-page/notas-do-dia-page';
+import { FuncionariosPage } from './pages/funcionarios-page/funcionarios-page';
+import { FornecedoresPage } from './pages/fornecedores-page/fornecedores-page';
+import { MesasPage } from './pages/mesas-page/mesas-page';
+import { CozinhaPage } from './pages/cozinha-page/cozinha-page';
 
 export const routes: Routes = [
   { path: '', component: InitialPage },
@@ -21,5 +25,9 @@ export const routes: Routes = [
   { path: 'finalizar-pedido', component: FinalizarPedidoPage },
   { path: 'consultar-mesas', component: ConsultarMesasPage },
   { path: 'notas-do-dia', component: NotasDoDiaPage },
+  { path: 'configuracoes/funcionarios', component: FuncionariosPage },
+  { path: 'configuracoes/fornecedores', component: FornecedoresPage },
+  { path: 'configuracoes/mesas', component: MesasPage },
+  { path: 'configuracoes/cozinha', component: CozinhaPage },
   { path: '**', redirectTo: '' }
 ];

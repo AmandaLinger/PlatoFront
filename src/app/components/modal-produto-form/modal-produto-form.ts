@@ -30,7 +30,7 @@ export class ModalProdutoForm implements OnChanges {
   }
 
   get imagePreview(): string {
-    return this.form.controls.imagemUrl.value.trim();
+    return this.form.controls.imagemUrl.value?.trim() || '';
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -68,8 +68,11 @@ export class ModalProdutoForm implements OnChanges {
       const imageDataUrl = reader.result;
 
       if (typeof imageDataUrl === 'string') {
+        // Atualiza diretamente o valor no FormGroup.
+        // O get imagePreview() vai ler esse valor automaticamente!
         this.form.controls.imagemUrl.setValue(imageDataUrl);
         this.form.controls.imagemUrl.markAsDirty();
+        this.form.controls.imagemUrl.markAsTouched();
       }
     };
     reader.onerror = () => {
