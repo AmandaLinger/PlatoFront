@@ -1,7 +1,7 @@
 <main>
 
   <div class="position-config">
-    <app-btn-config/>
+    <app-btn-config (configClick)="openConfig()" />
   </div>
 
   <div class="container">
@@ -26,5 +26,7 @@
     </app-item-home>
   </div>
 
-  <app-tela-config class="position-tela-config"/>
+  @if (isConfigOpen) {
+    <app-tela-config (closed)="closeConfig()" />
+  }
 </main>

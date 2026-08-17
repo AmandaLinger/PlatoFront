@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {ItemHome} from '../item-home/item-home';
 import {RouterLink} from '@angular/router';
 
@@ -12,5 +12,9 @@ import {RouterLink} from '@angular/router';
   styleUrl: './tela-config.scss',
 })
 export class TelaConfig {
+  @Output() readonly closed = new EventEmitter<void>();
 
+  close(): void {
+    this.closed.emit();
+  }
 }

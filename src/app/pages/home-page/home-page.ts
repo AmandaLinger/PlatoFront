@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import {ItemHome} from '../../components/item-home/item-home';
-import {RouterLink} from '@angular/router';
-import {FooterComponent} from '../../components/footer-component/footer-component';
 import {BtnConfig} from '../../components/btn-config/btn-config';
 import {TelaConfig} from '../../components/tela-config/tela-config';
 
@@ -9,8 +7,6 @@ import {TelaConfig} from '../../components/tela-config/tela-config';
   selector: 'app-home-page',
   imports: [
     ItemHome,
-    RouterLink,
-    FooterComponent,
     BtnConfig,
     TelaConfig
   ],
@@ -18,5 +14,14 @@ import {TelaConfig} from '../../components/tela-config/tela-config';
   styleUrl: './home-page.scss',
 })
 export class HomePage {
+  isConfigOpen = false;
+
+  openConfig(): void {
+    this.isConfigOpen = true;
+  }
+
+  closeConfig(): void {
+    this.isConfigOpen = false;
+  }
 
 }

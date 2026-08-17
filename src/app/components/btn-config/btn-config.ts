@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-btn-config',
@@ -7,5 +7,9 @@ import {Component} from '@angular/core';
   styleUrl: './btn-config.scss',
 })
 export class BtnConfig {
+  @Output() readonly configClick = new EventEmitter<void>();
 
+  openConfig(): void {
+    this.configClick.emit();
+  }
 }
